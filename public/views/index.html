@@ -1,0 +1,53 @@
+<!doctype html>
+<html ng-app="lolStatsApp">
+<head>
+    <meta charset="UTF-8">
+
+    <title ng-bind="'' + title"></title>
+
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="libs/angular-route/angular-route.min.js"></script>    
+    <script src="libs/angular-smart-table/dist/smart-table.min.js"></script>
+
+    <script src="js/controllers/AuthCtrl.js"></script>
+    <script src="js/services/AuthService.js"></script>
+    <script src="js/appRoutes.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body>
+<div class="container" ng-controller="AuthController">
+    <div class="header">
+        <div class="home-btn">
+            <a type="button" class="btn btn-default btn-home" aria-label="Left Align" href="/home">
+              <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="ft-right user-info">
+            <div class="user-btns">
+                <button type="button" class="btn btn-default btn-logout" aria-label="Left Align" ng-click="logout()">
+                  <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+                </button>            
+            </div>
+            <div class="user-data-container">
+                <div>{{userInfo.name}}</div>
+            </div>
+        </div>        
+    </div>
+    <div class="nav-bar-container">
+        <nav class="navbar navbar-inverse">
+            <ul class="nav navbar-nav">
+            </ul>
+        </nav>
+    </div>
+
+    <div ng-view></div>
+
+</div>
+</body>
+</html>

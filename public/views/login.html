@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lol Statistics</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="libs/angular-route/angular-route.min.js"></script>
+    <script src="libs/angular-smart-table/dist/smart-table.min.js"></script>
+
+    <script src="js/controllers/AuthCtrl.js"></script>
+    <script src="js/services/AuthService.js"></script>
+    <script src="js/appRoutes.js"></script>
+    <script src="js/app.js"></script>
+
+    <script type="text/javascript">
+        $( document ).ready(function() {
+            $('#username').focus();
+        });
+    </script>
+</head>
+<body ng-app="lolStatsApp" ng-controller="AuthController">
+<div class="container">
+    <div class="login-container">
+        <div class="top-container">
+            <div class="login-text">Sign In</div>
+        </div>
+        <div ng-show="error" class="alert alert-danger login-error">{{error}}</div>
+        <form role="form" class="login-form" ng-submit="authenticate()">
+            <div class="form-group">
+                <label for="username" class="login-label">User Name:</label>
+                <input type="text" id="username" class="form-control login-input" name="username" ng-model="loginForm.username" required>
+                <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
+            </div>
+            <div class="form-group">
+                <label for="password" class="login-label">Password:</label>
+                <input type="password" class="form-control login-input" name="password" ng-model="loginForm.password" required>
+                <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+            </div>
+            <div class="btn-login-container">
+                <button type="submit" class="btn btn-default btn-login">SIGN IN</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
