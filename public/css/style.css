@@ -91,3 +91,7 @@ td>img {
 .progress-bar {
 	font-weight: bold;
 }
+
+.win-ratio-bar {
+	width: 80%;
+}

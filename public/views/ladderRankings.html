@@ -23,13 +23,16 @@
 			<td>{{summoner.tier}}</td>
 			<td>{{summoner.lp}}</td>
 			<td>
-				<div class="progress">
-				  <div class="progress-bar" role="progressbar" aria-valuenow="{{summoner.wins}}" aria-valuemin="0" aria-valuemax="{{summoner.totalGames}}" ng-style="{width : ( summoner.winPerc + '%' ) }">
-				  	{{summoner.wins}}				  	
-				  </div>
-				  <div class="progress-bar loss-bar" role="progressbar" aria-valuenow="{{summoner.losses}}" aria-valuemin="0" aria-valuemax="{{summoner.totalGames}}" ng-style="{width : ( summoner.lossPerc + '%' ) }">
-				  	{{summoner.losses}}				  	
-				  </div>
+				<div>
+					<div class="progress ft-left win-ratio-bar">
+						<div class="progress-bar" role="progressbar" aria-valuenow="{{summoner.wins}}" aria-valuemin="0" aria-valuemax="{{summoner.totalGames}}" ng-style="{width : ( summoner.winPerc + '%' ) }">
+					  		{{summoner.wins}}				  	
+					  	</div>
+					  	<div class="progress-bar loss-bar" role="progressbar" aria-valuenow="{{summoner.losses}}" aria-valuemin="0" aria-valuemax="{{summoner.totalGames}}" ng-style="{width : ( summoner.lossPerc + '%' ) }">
+					  		{{summoner.losses}}				  	
+					  	</div>				  	
+					</div>
+					<span class="ft-right">{{summoner.winPerc + '%'}}</span>
 				</div>
 			</td>
 		</tr>
