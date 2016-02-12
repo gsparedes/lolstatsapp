@@ -8,44 +8,8 @@
 	height: 50px;
 }
 
-.nav-bar-container {
-	float: left;
-	width: 100%;
-}
-
-.navbar {
-	margin: 0;
-	padding: 1% 0;
-}
-
-.navbar-inverse {
-	float: left;
-}
-
-.user-data-container {
-	float: right;
-	color: white;
-	margin-top: 11%;
-}
-
-.user-btns {
-	float: right;
-	margin-top: 5%;
-}
-
-.home-btn {
-	float: left;
-	margin-top: 1%;
-    padding-left: 0.5%
-}
-
 .btn-logout, .btn-logout:hover, .btn-logout:focus, .btn-home, .btn-home:hover, .btn-home:focus, .btn-edit, .btn-edit:hover, .btn-edit:focus, .btn-remove, .btn-remove:hover, .btn-remove:focus {
 	background: inherit;
-}
-
-.btn-add {
-	padding: 3% 8%;
-	background-color: #41a940;
 }
 
 .table-striped>tbody>tr:nth-child(odd)>td, .table-striped>tbody>tr:nth-child(odd)>th {
@@ -54,21 +18,6 @@
 
 .table-hover>tbody>tr:hover>td,.table-hover>tbody>tr:hover>th {
   	background-color: #dff0d8;
-}
-
-.btn:hover {
-	background-color: inherit;
-	color: inherit;
-}
-
-.btn-add:hover {
-	background-color: #41a940;
-	color: white;
-}
-
-.btn-edit, .btn-remove {
-	color: grey;
-	padding: 5px 10px;
 }
 
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
@@ -93,96 +42,6 @@
 	opacity: 0.3;
 }
 
-.x3-logo {
-	width: 118px;
-    margin-top: 3%;
-}
-
-.login-container {
-	margin: 0 auto;
-	width: 450px;
-	margin-top: 5%;
-	padding: 3%;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-}
-
-.checkbox {
-	text-align: center;
-}
-
-.checkbox label {
-	padding-left: 0;
-    margin-top: 0.5%;
-    cursor: default;
-}
-
-.btn-login-container {
-	margin-top: 5%;
-}
-
-.btn-login {
-	width: 100%;
-	background-color: #41a940;
-	border-radius: 3px;
-}
-
-.btn-login:hover {
-	background-color: #009fda;
-	color: white;
-}
-
-.login-input {
-	margin: 0 auto;
-}
-
-.login-label {
-	margin-left: 1.5%;
-}
-
-.top-container {
-	float: left;
-	width: 100%;
-	font-size: 2em;
-    color: #333;
-    text-align: center;
-    margin-bottom: 7%;
-}
-
-.login-text {
-	display: inline;
-}
-
-.sage-text {	
-    color: #007f64;
-}
-
-.x3-text {
-	color: #41a940;
-}
-
-.login-error {
-	margin-top: 10%;
-    text-align: center;
-    padding: 10px;
-}
-
-.btn-add-object {
-	background-color: #41a940;
-	border-radius: 3px;
-	margin-right: 10%;
-}
-
-.btn-add-object:hover {
-	background-color: #009fda;
-	color: white;
-}
-
-.btn-add-container {
-	width: 25%;
-	padding-bottom: 2%;
-}
-
 .input-sm {
 	width: 30%;
 }
@@ -201,93 +60,18 @@
     color: #a94442;
 }
 
-.form-control {
-    height: 30px;
-    padding: 6px 12px;
-    font-size: 14px;
-    line-height: 1.428571429;
-    color: #555;
-    vertical-align: middle;
-    background-color: #fff;
-    background-image: none;
-    border: 1px solid #ccc;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
-    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-}
-
-#hibernate-info {
-	display: none;
-}
-
-.modal-header .close {
-    margin-top: 0;
-    color: white;
-}
-
-.modal-delete {
-	width: 400px;
-}
-
-.modal-delete-text {
-	color: #4d4f53;
-	font-size: 16px;
-	text-align: center;
-	margin-bottom: 5%;
-}
-
-.btn-confirm, .btn-confirm:hover {
-	padding: 2% 5%;
-	background-color: #41a940;
-	color: white;
-	margin-right: 10%;
-}
-
-.btn-cancel, .btn-cancel:hover {
-	padding: 2% 5%;
-	background-color: #41a940;
-	color: white;
-}
-
-.modal-btns {
-	text-align: center;
-}
-
-.modal-open {
-    overflow-y: auto;
-}
-
-body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom {
-	margin-right: 0;
-}
-
-.obj-text {
-	font-weight: normal;
-	cursor: auto;
-}
-
-.detail-edit {
-	margin-top: 2.5%;
-    margin-left: 1%;
-}
-
-#service-dd {
-	float: left;
-	margin-left: 1%;
-}
-
-.service-dd-label {
-	margin-top: 7px;
-}
-
-.required {
-	color: red;
-}
-
 .currently-loading {
     -moz-opacity: 0.45;
     filter: alpha(opacity=45);
     width: 35px;
     z-index: 10;
+}
+
+a:active {
+	background-color: transparent;
+}
+
+.navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>.active>a:focus {
+	color: white;
+	background: none;
 }

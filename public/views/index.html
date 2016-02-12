@@ -15,36 +15,21 @@
     <script src="libs/angular-route/angular-route.min.js"></script>    
     <script src="libs/angular-smart-table/dist/smart-table.min.js"></script>
 
-    <script src="js/controllers/AuthCtrl.js"></script>
-    <script src="js/services/AuthService.js"></script>
+    <script src="js/controllers/PlayerCtrl.js"></script>
+    <script src="js/services/PlayerService.js"></script>
     <script src="js/appRoutes.js"></script>
     <script src="js/app.js"></script>
 </head>
 <body>
-<div class="container" ng-controller="AuthController">
+<div class="container" ng-controller="PlayerController">
     <div class="header">
-        <div class="home-btn">
-            <a type="button" class="btn btn-default btn-home" aria-label="Left Align" href="/home">
-              <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-            </a>
-        </div>
-        <div class="ft-right user-info">
-            <div class="user-btns">
-                <button type="button" class="btn btn-default btn-logout" aria-label="Left Align" ng-click="logout()">
-                  <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
-                </button>            
-            </div>
-            <div class="user-data-container">
-                <div>{{userInfo.name}}</div>
-            </div>
-        </div>        
-    </div>
-    <div class="nav-bar-container">
-        <nav class="navbar navbar-inverse">
+        <nav>
             <ul class="nav navbar-nav">
+                <li ng-class="{ active: isActive('/ladderRankings') }"><a href="/ladderRankings">Ladder Rankings</a></li>
+                <li ng-class="{ active: isActive('/listOfChampions') }"><a href="/listOfChampions">List of Champions</a></li>
             </ul>
         </nav>
-    </div>
+    </div>    
 
     <div ng-view></div>
 

@@ -2,21 +2,13 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 
     $routeProvider
 
-        .when('/login', {
-            controller: 'AuthController'
+        .when('/ladderRankings', {
+            title: 'Current Ladder Rankings',
+            templateUrl: 'views/ladderRankings.html',
+            controller: 'PlayerController'
         })
 
-        .when('/logout', {
-            controller: 'AuthController'
-        })
-
-        /*.when('/detailLog', {
-            title: 'Detail Log View',
-            templateUrl: 'views/detailLog.html',
-            controller: 'LogController'
-        })*/
-
-        .otherwise({ redirectTo: '/login' });
+        .otherwise({ redirectTo: '/ladderRankings' });
 
     $locationProvider.html5Mode({
         enabled: true,

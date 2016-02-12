@@ -3,8 +3,8 @@ var apiApp = angular.module('lolStatsApp',
 		'ngRoute',
 		'appRoutes',
 		'smart-table',
-		'AuthCtrl',
-		'AuthService'
+		'PlayerCtrl',
+		'PlayerService'
 	]
 )
 
