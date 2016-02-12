@@ -5,7 +5,7 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
         .when('/ladderRankings', {
             title: 'Current Ladder Rankings',
             templateUrl: 'views/ladderRankings.html',
-            controller: 'PlayerController'
+            controller: 'SummonerController'
         })
 
         .otherwise({ redirectTo: '/ladderRankings' });

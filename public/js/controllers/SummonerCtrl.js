@@ -1,12 +1,12 @@
-angular.module('PlayerCtrl', []).controller('PlayerController', function($scope, $rootScope, $location, $route, Players) {
+angular.module('SummonerCtrl', []).controller('SummonerController', function($scope, $rootScope, $location, $route, Summoners) {
     $scope.formData = {};
-    $scope.players = [];
-    $scope.displayedPlayers = [].concat($scope.players);
-    $scope.player = null;
+    $scope.summoners = [];
+    $scope.displayedSummoners = [].concat($scope.summoners);
+    $scope.summoner = null;
 
-	Players.getLadderRankings()
+	Summoners.getLadderRankings()
 		.success(function(data) {
-			$scope.players = data;
+			$scope.summoners = data;
 		}); 
 
     $scope.isActive = function (viewLocation) {

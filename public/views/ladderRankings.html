@@ -1,5 +1,5 @@
-<div ng-controller="PlayerController">
-	<!-- <table st-table="displayedPlayers" st-safe-src="players" class="table table-striped table-hover">
+<div ng-controller="SummonerController">
+	<table st-table="displayedSummoners" st-safe-src="summoners" class="table table-striped table-hover">
 		<thead>
 		<tr>
 			<th colspan="7">
@@ -16,12 +16,12 @@
 		</tr>
 		</thead>
 		<tbody>
-		<tr ng-repeat="player in displayedPlayers">
-			<td>{{player.rank}}</td>
-			<td><a href="/detailPlayer?id={{player.id}}">{{player.name}}</a></td>
-			<td>{{player.tier}}</td>
-			<td>{{player.lp}}</td>
+		<tr ng-repeat="summoner in displayedSummoners">
+			<td>{{summoner.rank}}</td>
+			<td><a href="/detailSummoner?id={{summoner.id}}">{{summoner.name}}</a></td>
+			<td>{{summoner.tier}}</td>
+			<td>{{summoner.lp}}</td>
 		</tr>
 		</tbody>
-	</table> -->
+	</table>
 </div>

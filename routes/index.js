@@ -15,14 +15,12 @@
     res.end();
   });
 
-  router.get('/api/playerLadderRankings', function(req, res) {
-    console.log("REQUEST RECEIVED")
-    helpers.httpClient('league/challenger?type=RANKED_SOLO_5x5&', function(err, players) {
+  router.get('/api/summonerLadderRankings', function(req, res) {
+    helpers.getSummonerRankings(function(err, summoners) {
       if (err)
         res.status(404).send(err);
-      // Massage data to display on frontend
-      
-      res.status(200).json(players);
+      else
+        res.status(200).json(summoners);
     });
   });
 

@@ -1,15 +1,16 @@
-var apiApp = angular.module('lolStatsApp',
+var lolStatsApp = angular.module('lolStatsApp',
 	[
 		'ngRoute',
 		'appRoutes',
 		'smart-table',
-		'PlayerCtrl',
-		'PlayerService'
+		'SummonerCtrl',
+		'SummonerService'
 	]
 )
 
-apiApp.run(['$rootScope', function($rootScope) {
+lolStatsApp.run(['$rootScope', function($rootScope) {
     $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
-        $rootScope.title = current.$$route.title;
+    	if (current.$$route.title)
+        	$rootScope.title = current.$$route.title;
     });
 }]);

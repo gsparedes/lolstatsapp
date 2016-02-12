@@ -12,14 +12,6 @@
 	background: inherit;
 }
 
-.table-striped>tbody>tr:nth-child(odd)>td, .table-striped>tbody>tr:nth-child(odd)>th {
-	background-color: #F5FBF4;
-}
-
-.table-hover>tbody>tr:hover>td,.table-hover>tbody>tr:hover>th {
-  	background-color: #dff0d8;
-}
-
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
 	vertical-align: middle;
 }
