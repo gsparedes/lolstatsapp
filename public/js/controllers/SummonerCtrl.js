@@ -13,15 +13,4 @@ angular.module('SummonerCtrl', []).controller('SummonerController', function($sc
         var active = (viewLocation === $location.path());
         return active;
     };
-
-    $scope.checkSort = function($event) {
-        var element = angular.element($event.target);
-        if (element.hasClass('st-sort-ascent') || element.hasClass('st-sort-descent')) {
-            var img = angular.element(element.children()[0]);
-            img.hide();
-        } else if (!element.hasClass('st-sort-ascent') && !element.hasClass('st-sort-descent')) {
-            var img = angular.element(element.children()[0]);
-            img.show();
-        }
-    }
 });

@@ -10,7 +10,7 @@ var lolStatsApp = angular.module('lolStatsApp',
 
 lolStatsApp.run(['$rootScope', function($rootScope) {
     $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
-    	if (current.$$route.title)
+    	if (current.$$route)
         	$rootScope.title = current.$$route.title;
     });
 }]);
