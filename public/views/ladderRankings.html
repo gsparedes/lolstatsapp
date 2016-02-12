@@ -2,7 +2,7 @@
 	<table st-table="displayedSummoners" st-safe-src="summoners" class="table table-striped table-hover">
 		<thead>
 		<tr>
-			<th colspan="7">
+			<th colspan="5">
 				<div class="ft-right">
 					<input st-search="" class="form-control" placeholder="Global Search..." type="text"/>
 				</div>				
@@ -13,14 +13,25 @@
 			<th st-sort="name" class="sort-header">Summoner Name</th>
 			<th st-sort="tier" class="sort-header">Tier</th>
 			<th st-sort="lp" class="sort-header">LP</th>
+			<th>Win Ratio</th>
 		</tr>
 		</thead>
 		<tbody>
 		<tr ng-repeat="summoner in displayedSummoners">
 			<td>{{summoner.rank}}</td>
-			<td><a href="/detailSummoner?id={{summoner.id}}">{{summoner.name}}</a></td>
+			<td><img src="{{summoner.img}}"/><a href="/detailSummoner?id={{summoner.id}}">{{summoner.name}}</a></td>
 			<td>{{summoner.tier}}</td>
 			<td>{{summoner.lp}}</td>
+			<td>
+				<div class="progress">
+				  <div class="progress-bar" role="progressbar" aria-valuenow="{{summoner.wins}}" aria-valuemin="0" aria-valuemax="{{summoner.totalGames}}" ng-style="{width : ( summoner.winPerc + '%' ) }">
+				  	{{summoner.wins}}				  	
+				  </div>
+				  <div class="progress-bar loss-bar" role="progressbar" aria-valuenow="{{summoner.losses}}" aria-valuemin="0" aria-valuemax="{{summoner.totalGames}}" ng-style="{width : ( summoner.lossPerc + '%' ) }">
+				  	{{summoner.losses}}				  	
+				  </div>
+				</div>
+			</td>
 		</tr>
 		</tbody>
 	</table>
