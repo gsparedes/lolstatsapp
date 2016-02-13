@@ -21,7 +21,7 @@
 			<table st-table="displayedSummonerChampions" st-safe-src="summonerChampions" class="table table-striped table-hover">
 				<thead>
 					<tr>
-						<th colspan="5">
+						<th colspan="7">
 							<div class="ft-right">
 								<input st-search="" class="form-control" placeholder="Table Search..." type="text"/>
 							</div>				
@@ -30,12 +30,23 @@
 					<tr>
 						<th st-sort="rank" class="sort-header">Rank</th>
 						<th st-sort="name" class="sort-header">Champion</th>
+						<th st-sort="name" class="sort-header">Total Kills</th>
+						<th st-sort="name" class="sort-header">Total Deaths</th>
+						<th st-sort="name" class="sort-header">Total Assists</th>
+						<th st-sort="name" class="sort-header">CS</th>
+						<th st-sort="name" class="sort-header">Gold</th>
+						<!-- <th>Play Ratio</th> -->
 					</tr>
 				</thead>
 				<tbody>
 					<tr ng-repeat="summonerChampion in displayedSummonerChampions">
 						<td>{{summonerChampion.rank}}</td>
 						<td><img src="{{summonerChampion.img}}"/><a href="#">{{summonerChampion.name}}</a></td>
+						<td>{{summonerChampion.kills}}</td>
+						<td>{{summonerChampion.deaths}}</td>
+						<td>{{summonerChampion.assists}}</td>
+						<td>{{summonerChampion.cs}}</td>
+						<td>{{summonerChampion.gold}}</td>
 					</tr>
 				</tbody>
 			</table>
