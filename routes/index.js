@@ -33,6 +33,24 @@
     });
   });
 
+  router.get('/api/summonerById/:id', function(req, res) {
+    helpers.getSummonerData(req.params.id, function(err, summoner) {
+      if (err)
+        res.status(404).send(err);
+      else
+        res.status(200).json(summoner);
+    });
+  });
+  
+  router.get('/api/summonerChampions/:id', function(req, res) {
+    helpers.getSummonerChampionData(req.params.id, function(err, champions) {
+      if (err)
+        res.status(404).send(err);
+      else
+        res.status(200).json(champions);
+    });
+  });
+
   router.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname + '../../public/views/index.html'));
   });

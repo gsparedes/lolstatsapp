@@ -4,7 +4,9 @@ var lolStatsApp = angular.module('lolStatsApp',
 		'appRoutes',
 		'smart-table',
 		'SummonerCtrl',
-		'SummonerService'
+		'SummonerService',
+		'NavCtrl',
+		'NavService'
 	]
 )
 

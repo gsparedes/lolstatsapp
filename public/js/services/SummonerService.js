@@ -4,9 +4,12 @@ angular.module('SummonerService', []).factory('Summoners', ['$http', function($h
         getLadderRankings : function() {
             return $http.get('/api/summonerLadderRankings');
         },
-        searchByName : function(summonerData) {
-        	return $http.post('/api/summonerSearch', summonerData);
+        getById : function(id) {
+        	return $http.get('/api/summonerById/' + id);
+        },
+        getChampions : function(id) {
+            return $http.get('/api/summonerChampions/' + id);
         }
-    }       
+    }
 
 }]);

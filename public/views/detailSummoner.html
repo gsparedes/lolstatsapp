@@ -1,0 +1,46 @@
+<div class="summonerProfilePageWrap">
+	<div class="col-sm-10 col-sm-offset-1 row">
+		<div class="col-md-2 ft-left">
+			<img id="summonerIcon" src="{{summoner.img}}"/>
+		</div>
+		<div class="col-md-3 ft-left row">
+			<h2 class="ft-left">{{summoner.name}}</h2>
+			<br>
+			<label for="ladderRank">Ladder Rank:</label>
+            <label class="label-text">{{summoner.id}}</label>
+		</div>
+	</div>
+	<div class="col-sm-12 profile-tabs">
+		<ul class="nav nav-tabs">
+		  <li role="presentation" ng-class="{ active: isTabActive('champs') }"><a href="/detailSummoner?id={{summoner.id}}&tab=champs">Champions</a></li>
+		  <li role="presentation" ng-class="{ active: isTabActive('summary') }"><a href="/detailSummoner?id={{summoner.id}}&tab=summary">Summary</a></li>
+		</ul>
+	</div>
+	<div class="col-sm-12">
+		<div class="col-sm-12 tab-table" ng-show="isTabActive('champs')">
+			<table st-table="displayedSummonerChampions" st-safe-src="summonerChampions" class="table table-striped table-hover">
+				<thead>
+					<tr>
+						<th colspan="5">
+							<div class="ft-right">
+								<input st-search="" class="form-control" placeholder="Table Search..." type="text"/>
+							</div>				
+						</th>
+					</tr>
+					<tr>
+						<th st-sort="rank" class="sort-header">Rank</th>
+						<th st-sort="name" class="sort-header">Champion</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="summonerChampion in displayedSummonerChampions">
+						<td>{{summonerChampion.rank}}</td>
+						<td><img src="{{summonerChampion.img}}"/><a href="#">{{summonerChampion.name}}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="col-sm-12" ng-show="isTabActive('summary')">
+		</div>
+	</div>
+</div>

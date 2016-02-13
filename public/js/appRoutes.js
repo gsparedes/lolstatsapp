@@ -8,6 +8,12 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
             controller: 'SummonerController'
         })
 
+        .when('/detailSummoner', {
+            title: 'Summoner Statistical View',
+            templateUrl: 'views/detailSummoner.html',
+            controller: 'SummonerController'
+        })
+
         .otherwise({ redirectTo: '/ladderRankings' });
 
     $locationProvider.html5Mode({

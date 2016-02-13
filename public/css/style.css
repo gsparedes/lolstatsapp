@@ -128,3 +128,30 @@ td>img {
 #searchBtn {
 	margin-left: -2px;
 }
+
+#summonerIcon {
+	width: 120px;
+    height: 120px;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    border: 5px solid darkgrey;
+}
+
+.summonerProfilePageWrap {
+	margin-top: 3%;
+	float: left;
+	width: 100%;
+}
+
+.label-text {
+	font-weight: normal;
+	cursor: auto;
+}
+
+.profile-tabs {
+	margin-top: 3%;
+}
+
+.tab-table {
+	padding: 0;
+}
