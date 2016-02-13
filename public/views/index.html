@@ -29,7 +29,24 @@
                 <li ng-class="{ active: isActive('/listOfChampions') }"><a href="/listOfChampions">List of Champions</a></li>
             </ul>
         </nav>
-    </div>    
+    </div>
+
+    <div class="outer-search-bar-wrap">
+        <div class="outer-search-bar-container">
+            <div class="search-bar-wrap">
+                <form role="form" name="searchForm" ng-submit="summonerSearch()">
+                    <div class="search-bar">
+                        <div class="input-group">
+                            <input type="text" class="form-control ft-left" placeholder="Enter summoner's name" id="searchBar" ng-model="formData.summonerName"/>
+                            <button type="submit" class="btn btn-default ft-left" aria-label="Search" id="searchBtn">
+                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <div ng-view></div>
 

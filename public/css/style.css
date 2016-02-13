@@ -95,3 +95,36 @@ td>img {
 .win-ratio-bar {
 	width: 80%;
 }
+
+.outer-search-bar-wrap {
+	width: 100%;
+    float: left;
+}
+
+.outer-search-bar-container {
+	width: 60%;
+	margin: 0 auto;
+}
+
+.search-bar-wrap {
+	width: 80%;
+	margin: 0 auto;
+	padding: 5%;
+}
+
+.search-bar {
+	width: 100%;
+	float: left;
+}
+
+.search-bar>.input-group {
+	width: 100%;
+}
+
+#searchBar {
+    width: 80%;
+}
+
+#searchBtn {
+	margin-left: -2px;
+}

@@ -13,4 +13,20 @@ angular.module('SummonerCtrl', []).controller('SummonerController', function($sc
         var active = (viewLocation === $location.path());
         return active;
     };
+
+    $scope.summonerSearch = function() {
+        console.log($scope.formData)
+        Summoners.searchByName($scope.formData)
+            .then(function(response) {
+                $scope.formData = {};
+                if (response.status === 200 && response.data) {
+                    $scope.summoner = response.data;
+                    var url = '/detailSummoner?id=' + $scope.summoner.id;
+                    $location.url(url);
+                }
+            }, function(response) {
+                $scope.error = 'Summoner not found';
+                $location.path('/ladderRankings');
+            });
+    }
 });
