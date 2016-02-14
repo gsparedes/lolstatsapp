@@ -12,7 +12,7 @@ angular.module('NavCtrl', []).controller('NavController', function($scope, $root
                 $scope.formData = {};
                 if (response.status === 200 && response.data) {
                     $scope.summoner = response.data;
-                    var url = '/detailSummoner?id=' + $scope.summoner.id + '&tab=champs';
+                    var url = '/detailSummoner?id=' + $scope.summoner.id + '&tab=ranked';
                     $location.url(url);
                 }
             }, function(response) {
