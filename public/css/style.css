@@ -163,3 +163,7 @@ td>img {
 .dropdown-menu>li>a {
 	cursor: pointer;
 }
+
+.summonerName {
+	margin-bottom: 0;
+}

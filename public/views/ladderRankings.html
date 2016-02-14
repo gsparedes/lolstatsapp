@@ -18,7 +18,7 @@
 	<tbody>
 	<tr ng-repeat="summoner in displayedSummoners">
 		<td>{{summoner.rank}}</td>
-		<td><img src="{{summoner.img}}"/><a href="/detailSummoner?id={{summoner.id}}&tab=champs">{{summoner.name}}</a></td>
+		<td><img src="{{summoner.img}}"/><a href="/detailSummoner?id={{summoner.id}}&tab=ranked">{{summoner.name}}</a></td>
 		<td>{{summoner.tier}}</td>
 		<td>{{summoner.lp | number:0}}</td>
 		<td>

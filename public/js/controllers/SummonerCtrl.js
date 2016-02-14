@@ -19,7 +19,7 @@ angular.module('SummonerCtrl', []).controller('SummonerController', function($sc
                     $scope.summoner = response.data;
 
                 var tab = $location.search().tab;
-                if (tab === 'champs') {
+                if (tab === 'ranked') {
                     Summoners.getChampions(summonerId, 'SEASON2016')
                         .then(function(response) {
                             if (response.status === 200 && response.data) {
