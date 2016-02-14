@@ -17,11 +17,22 @@
 		</ul>
 	</div>
 	<div class="col-sm-12">
-		<div class="col-sm-12 tab-table" ng-show="isTabActive('champs')">
+		<div class="col-sm-12 tab-table" ng-show="isTabActive('champs')">			
 			<table st-table="displayedSummonerChampions" st-safe-src="summonerChampions" class="table table-striped table-hover">
 				<thead>
 					<tr>
-						<th colspan="7">
+						<th colspan="8">
+							<div class="dropdown ft-left">
+								<button class="btn btn-default dropdown-toggle" type="button" id="seasonDD" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+									{{rankedSeason}}
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" aria-labelledby="seasonDD">
+									<li><a ng-click="refreshSeasonData('SEASON2016')">Season 6</a></li>
+									<li><a ng-click="refreshSeasonData('SEASON2015')">Season 5</a></li>
+									<li><a ng-click="refreshSeasonData('SEASON2014')">Season 4</a></li>
+								</ul>
+							</div>
 							<div class="ft-right">
 								<input st-search="" class="form-control" placeholder="Table Search..." type="text"/>
 							</div>				
@@ -35,18 +46,30 @@
 						<th st-sort="name" class="sort-header">Total Assists</th>
 						<th st-sort="name" class="sort-header">CS</th>
 						<th st-sort="name" class="sort-header">Gold</th>
-						<!-- <th>Play Ratio</th> -->
+						<th>Play Ratio</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr ng-repeat="summonerChampion in displayedSummonerChampions">
 						<td>{{summonerChampion.rank}}</td>
-						<td><img src="{{summonerChampion.img}}"/><a href="#">{{summonerChampion.name}}</a></td>
-						<td>{{summonerChampion.kills}}</td>
-						<td>{{summonerChampion.deaths}}</td>
-						<td>{{summonerChampion.assists}}</td>
-						<td>{{summonerChampion.cs}}</td>
-						<td>{{summonerChampion.gold}}</td>
+						<td><img src="{{summonerChampion.img}}"/>{{summonerChampion.name}}</td>
+						<td>{{summonerChampion.kills | number:0}}</td>
+						<td>{{summonerChampion.deaths | number:0}}</td>
+						<td>{{summonerChampion.assists | number:0}}</td>
+						<td>{{summonerChampion.cs | number:0}}</td>
+						<td>{{summonerChampion.gold | number:0}}</td>
+						<td>
+							<div>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar" aria-valuenow="{{summonerChampion.totalSessionsWon}}" aria-valuemin="0" aria-valuemax="{{summonerChampion.totalSessionsPlayed}}" ng-style="{width : ( summonerChampion.winPerc + '%' ) }">
+								  		{{summonerChampion.totalSessionsWon}} W
+								  	</div>
+								  	<div class="progress-bar loss-bar" role="progressbar" aria-valuenow="{{summonerChampion.totalSessionsLost}}" aria-valuemin="0" aria-valuemax="{{summonerChampion.totalSessionsPlayed}}" ng-style="{width : ( summonerChampion.lossPerc + '%' ) }">
+								  		{{summonerChampion.totalSessionsLost}}	L
+								  	</div>				  	
+								</div>
+							</div>
+						</td>
 					</tr>
 				</tbody>
 			</table>

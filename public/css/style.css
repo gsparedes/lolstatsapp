@@ -88,6 +88,10 @@ td>img {
 	 background-color: darkred;
 }
 
+.progress {
+	margin-bottom: 0;
+}
+
 .progress-bar {
 	font-weight: bold;
 }
@@ -154,4 +158,8 @@ td>img {
 
 .tab-table {
 	padding: 0;
+}
+
+.dropdown-menu>li>a {
+	cursor: pointer;
 }

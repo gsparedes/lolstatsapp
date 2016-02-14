@@ -7,8 +7,8 @@ angular.module('SummonerService', []).factory('Summoners', ['$http', function($h
         getById : function(id) {
         	return $http.get('/api/summonerById/' + id);
         },
-        getChampions : function(id) {
-            return $http.get('/api/summonerChampions/' + id);
+        getChampions : function(id, season) {
+            return $http.get('/api/summonerChampions/' + id + '/' + season);
         }
     }
 

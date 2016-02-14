@@ -42,8 +42,8 @@
     });
   });
   
-  router.get('/api/summonerChampions/:id', function(req, res) {
-    helpers.getSummonerChampionData(req.params.id, function(err, champions) {
+  router.get('/api/summonerChampions/:id/:season', function(req, res) {
+    helpers.getSummonerChampionData(req.params.id, req.params.season, function(err, champions) {
       if (err)
         res.status(404).send(err);
       else

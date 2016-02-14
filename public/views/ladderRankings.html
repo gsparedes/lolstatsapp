@@ -20,7 +20,7 @@
 		<td>{{summoner.rank}}</td>
 		<td><img src="{{summoner.img}}"/><a href="/detailSummoner?id={{summoner.id}}&tab=champs">{{summoner.name}}</a></td>
 		<td>{{summoner.tier}}</td>
-		<td>{{summoner.lp}}</td>
+		<td>{{summoner.lp | number:0}}</td>
 		<td>
 			<div>
 				<div class="progress ft-left win-ratio-bar">
