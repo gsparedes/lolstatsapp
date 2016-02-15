@@ -1,5 +1,6 @@
 angular.module('NavCtrl', []).controller('NavController', function($scope, $rootScope, $location, $route, Nav) {
     $scope.formData = {};
+    $rootScope.error = null;
 
     $scope.isActive = function (viewLocation) {
         var active = (viewLocation === $location.path());
@@ -15,7 +16,7 @@ angular.module('NavCtrl', []).controller('NavController', function($scope, $root
                     var url = '/detailSummoner?id=' + $scope.summoner.id + '&tab=ranked';
                     $location.url(url);
                 } else
-                    $scope.error = 'Summoner not found';
+                    $rootScope.error = 'Summoner not found';
             });
     };
 });

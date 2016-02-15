@@ -7,6 +7,7 @@ angular.module('SummonerCtrl', []).controller('SummonerController', function($sc
     $scope.displayedSummonerGames = [].concat($scope.summonerGames);
     $scope.summoner = null;
     $scope.rankedSeason = '';
+    $rootScope.error = null;
 
 	Summoners.getLadderRankings()
 		.success(function(data) {
