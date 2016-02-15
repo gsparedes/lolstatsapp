@@ -14,10 +14,8 @@ angular.module('NavCtrl', []).controller('NavController', function($scope, $root
                     $scope.summoner = response.data;
                     var url = '/detailSummoner?id=' + $scope.summoner.id + '&tab=ranked';
                     $location.url(url);
-                }
-            }, function(response) {
-                $scope.error = 'Summoner not found';
-                $location.path('/ladderRankings');
+                } else
+                    $scope.error = 'Summoner not found';
             });
     };
 });

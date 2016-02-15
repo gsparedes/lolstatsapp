@@ -167,3 +167,9 @@ td>img {
 .summonerName {
 	margin-bottom: 0;
 }
+
+.search-error {
+	width: 88%;
+    margin-top: 3%;
+    padding: 10px;
+}
