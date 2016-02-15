@@ -9,6 +9,9 @@ angular.module('SummonerService', []).factory('Summoners', ['$http', function($h
         },
         getChampions : function(id, season) {
             return $http.get('/api/summonerChampions/' + id + '/' + season);
+        },
+        getRecentGames : function(id) {
+            return $http.get('/api/summonerRecentGames/' + id);
         }
     }
 

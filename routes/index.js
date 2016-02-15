@@ -51,6 +51,15 @@
     });
   });
 
+  router.get('/api/summonerRecentGames/:id', function(req, res) {
+    helpers.getSummonerRecentGames(req.params.id, function(err, games) {
+      if (err)
+        res.status(404).send(err);
+      else
+        res.status(200).json(games);
+    });
+  });
+
   router.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname + '../../public/views/index.html'));
   });

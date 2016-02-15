@@ -3,6 +3,8 @@ angular.module('SummonerCtrl', []).controller('SummonerController', function($sc
     $scope.displayedSummoners = [].concat($scope.summoners);    
     $scope.summonerChampions = [];
     $scope.displayedSummonerChampions = [].concat($scope.summonerChampions);
+    $scope.summonerGames = [];
+    $scope.displayedSummonerGames = [].concat($scope.summonerGames);
     $scope.summoner = null;
     $scope.rankedSeason = '';
 
@@ -26,6 +28,12 @@ angular.module('SummonerCtrl', []).controller('SummonerController', function($sc
                                 $scope.summonerChampions = response.data;
                                 $scope.rankedSeason = 'Season 6';
                             }
+                        });
+                } else if (tab === 'summary') {
+                    Summoners.getRecentGames(summonerId)
+                        .then(function(response) {
+                            if (response.status === 200 && response.data)
+                                $scope.summonerGames = response.data;
                         });
                 }
             });        

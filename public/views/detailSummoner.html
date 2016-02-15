@@ -74,7 +74,60 @@
 				</tbody>
 			</table>
 		</div>
-		<div class="col-sm-12" ng-show="isTabActive('summary')">
+		<div class="col-sm-12 tab-table" ng-show="isTabActive('summary')">
+			<table st-table="displayedSummonerGames" st-safe-src="summonerGames" class="table table-striped table-hover">
+				<thead>
+					<tr>
+						<th colspan="7">
+							<div class="ft-right">
+								<input st-search="" class="form-control" placeholder="Table Search..." type="text"/>
+							</div>				
+						</th>
+					</tr>
+					<tr>
+						<th st-sort="gameMode" class="sort-header">Game Mode</th>
+						<th st-sort="datePlayed" class="sort-header">Date Played</th>
+						<th st-sort="champName" class="sort-header">Champion</th>
+						<th>Spells</th>
+						<th>Stat Line</th>
+						<th st-sort="champLvl" class="sort-header">Level</th>
+						<th>Items</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="summonerGame in displayedSummonerGames">
+						<td>{{summonerGame.gameMode}}</td>
+						<td>{{summonerGame.datePlayed}}</td>
+						<td><img src="{{summonerGame.champImg}}"/>{{summonerGame.champName}}</td>
+						<td>
+							<div class="col-sm-8">
+								<div class="spellImageWrap">
+									<img class="spellImage" src="{{summonerGame.spell1ImgPath}}"/>
+									{{summonerGame.spell1Name}}
+								</div>
+								<div class="spellImageWrap">
+									<img class="spellImage" src="{{summonerGame.spell2ImgPath}}"/>
+									{{summonerGame.spell2Name}}
+								</div>
+							</div>
+						</td>
+						<td>{{summonerGame.kills | number:0}} / {{summonerGame.deaths | number:0}} / {{summonerGame.assists | number:0}}</td>
+						<td>{{summonerGame.champLvl}}</td>
+						<td>
+							<div class="itemWrap">
+								<img class="spellImage" src="{{summonerGame.item1ImgPath}}"/>
+								<img class="spellImage" src="{{summonerGame.item2ImgPath}}"/>
+								<img class="spellImage" src="{{summonerGame.item3ImgPath}}"/>
+							</div>
+							<div class="itemWrap">
+								<img class="spellImage" src="{{summonerGame.item4ImgPath}}"/>
+								<img class="spellImage" src="{{summonerGame.item5ImgPath}}"/>
+								<img class="spellImage" src="{{summonerGame.item6ImgPath}}"/>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</div>
 </div>
